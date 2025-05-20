@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Registration Form</title>
+
+  <!-- Font Awesome for Home Icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #74ebd5, #ACB6E5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+
+    .home-button {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      font-size: 14px;
+      border-radius: 25px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+      z-index: 9999;
+      transition: background-color 0.3s ease;
+      user-select: none;
+      white-space: nowrap;
+    }
+
+    .home-button:hover {
+      background-color: #0056b3;
+    }
+
+    .form-container {
+      background-color: #ffffff;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      width: 90%;
+      max-width: 500px;
+      margin-top: 60px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #444;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"],
+    input[type="password"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-sizing: border-box;
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      margin-right: 8px;
+    }
+
+    .gender-group,
+    .hobby-group {
+      margin-bottom: 20px;
+    }
+
+    button[type="submit"],
+    button[type="reset"] {
+      width: 48%;
+      padding: 12px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      color: #fff;
+    }
+
+    button[type="submit"] {
+      background-color: #28a745;
+    }
+
+    button[type="reset"] {
+      background-color: #dc3545;
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    a {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .btn-group {
+        flex-direction: column;
+      }
+
+      button[type="submit"],
+      button[type="reset"] {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Home Button -->
+  <button class="home-button" onclick="goHome()" aria-label="Go to Home">
+    <i class="fas fa-home"></i> Home
+  </button>
+
+  <!-- Form Container -->
+  <div class="form-container">
+    <h2>REGISTRATION FORM</h2>
+
+    <form id="registrationForm" action="#" method="POST" onsubmit="return handleSubmit(event)">
+      <!-- Full Name -->
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+      <!-- Phone Number -->
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" required pattern="[0-9]{10,15}" placeholder="e.g. 0541234567">
+
+      <!-- Email Address -->
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email here..." required>
+
+      <!-- Password -->
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" placeholder="Enter your password..." required>
+
+      <!-- Gender -->
+      <label>Gender:</label>
+      <div class="gender-group">
+        <label><input type="radio" name="gender" value="Male" required> Male</label>
+        <label><input type="radio" name="gender" value="Female"> Female</label>
+      </div>
+
+      <!-- Hobbies -->
+      <label>Hobbies:</label>
+      <div class="hobby-group">
+        <label><input type="checkbox" name="hobbies" value="Reading"> Reading</label>
+        <label><input type="checkbox" name="hobbies" value="Sports"> Sports</label>
+        <label><input type="checkbox" name="hobbies" value="Music"> Music</label>
+        <label><input type="checkbox" name="hobbies" value="Traveling"> Traveling</label>
+      </div>
+
+      <!-- Country -->
+      <label for="country">Country:</label>
+      <select id="country" name="country" required>
+        <option value="">-- Select Country --</option>
+        <option value="Ghana">Ghana</option>
+        <option value="Nigeria">Nigeria</option>
+        <option value="Kenya">Kenya</option>
+        <option value="South Africa">South Africa</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <!-- Message -->
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="4" placeholder="Write your message here..."></textarea>
+
+      <!-- Buttons -->
+      <div class="btn-group">
+        <button type="submit">Submit</button>
+        <button type="reset" onclick="handleReset()">Reset</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    function goHome() {
+      alert("You are being redirected to the home page...");
+      setTimeout(function () {
+        window.location.href = "index.html";
+      }, 2000);
+    }
+
+    function handleSubmit(event) {
+      event.preventDefault(); // Prevent real submission for now
+      alert("Form submitted successfully!");
+      return false; // Keep the page from refreshing
+    }
+
+    function handleReset() {
+      alert("Form has been cleared.");
+    }
+  </script>
+</body>
+</html>

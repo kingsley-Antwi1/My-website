@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Capture Ventures - CEO Information</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #e0f7fa;
+      background-image: url('images/img3.jpg'); /* Optional background */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      padding: 20px;
+      color: #333;
+    }
+
+    /* Small oval home button fixed top-left */
+    .home-button {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      font-size: 14px;
+      border-radius: 25px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+      z-index: 9999;
+      transition: background-color 0.3s ease;
+      user-select: none;
+      white-space: nowrap;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      background-color: rgba(255, 255, 255, 0.96);
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    header {
+      background: linear-gradient(135deg, #004d4d, #000000);
+      color: white;
+      padding: 2.5rem;
+      text-align: center;
+      border-radius: 15px;
+      margin-bottom: 2rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      animation: fadeInDown 2s ease-in;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px 4px rgba(0,0,,0.3);
+    
+    }
+
+    .ceo-info h2 {
+      text-align: center;
+      font-size: 2rem;
+      color: #009688;
+      margin-bottom: 1.5rem;
+    }
+
+    .ceo-info p {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    .ceo-info a {
+      color: #00796b;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .ceo-info a:hover {
+      text-decoration: underline;
+    }
+
+    .btn-container {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .btn-container a {
+      background-color: #299e4c;
+      color: white;
+      padding: 12px 24px;
+      margin: 10px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+      animation: fadeInDown 2s ease-in;
+    }
+
+    .btn-container a:hover {
+      background-color: #02100e;
+    
+    }
+
+    footer {
+      text-align: center;
+      background-color: #000000;
+      color: white;
+      padding: 1rem;
+      border-radius: 10px;
+      margin-top: 5rem;
+     animation: fadeInDown 4s ease-in-out;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+      .ceo-info h2 {
+        font-size: 1.5rem;
+      }
+      .ceo-info p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<header>
+      <h1>Welcome To Capture Ventures:</h1>
+      <h1>..Your Safe Place To Do Business...</h1>
+    </header>
+
+
+    <!-- Small home button on top-left -->
+  <button class="home-button" onclick="goHome()" aria-label="Go to Home">
+    <i class="fas fa-home"></i> Home
+  </button>
+
+  <div class="container">
+    
+    <section class="ceo-info">
+      <h2>Meet Our CEO</h2>
+      <p><strong>Name:</strong> Mr. Kingsley Antwi Obeng</p>
+      <p><strong>Contact:</strong> 0543625113</p>
+      <p><strong>Email:</strong> <a href="mailto:capture505@gmail.com">capture505@gmail.com</a></p>
+      <p><strong>Educational Background:</strong> Diploma in Basic Education, Bachelor's Degree in Business Administration (University of Ghana), and BSc. ITE at AAMUSTED-Kumasi.</p>
+      <p><strong>Customer Welcome Message:</strong> "Welcome to Capture Ventures! We value every customer and are committed to providing the best service and quality products."</p>
+      <p><strong>Reputation:</strong> Mr. Kingsley Antwi Obeng is well-known for his excellent customer service and dedication to the growth of local businesses.</p>
+
+      <div class="btn-container">
+        <a href="index.html" target="_blank">Visit Main Site</a>
+        <a href="register.html" target="_blank">Register Now</a>
+      </div>
+    </section>
+  </div>
+<script>
+    function goHome() {
+      window.location.href = "index.html"; // Change this to your home page URL
+    }
+  </script>
+  <footer>
+    <p>&copy; 2025 Capture Ventures. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>

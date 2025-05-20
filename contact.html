@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Form</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: gray;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Header and Navigation */
+    header {
+      background-color: #1a1a1a;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+    header .logo {
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+
+    .menu-toggle {
+      font-size: 28px;
+      cursor: pointer;
+      display: none;
+    }
+
+    nav#navMenu {
+      background-color: #1a1a1a;
+    }
+
+    nav#navMenu ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    nav#navMenu ul li {
+      margin: 0;
+    }
+
+    nav#navMenu ul li a {
+      display: block;
+      padding: 12px 16px;
+      color: white;
+      text-decoration: none;
+    }
+
+    nav#navMenu ul li a:hover {
+      background-color: #5c5353;
+    }
+
+    /* Contact Form Section */
+    .contact-form {
+      background-color: #ffffff;
+      padding: 30px 40px;
+      border-radius: 12px;
+      max-width: 500px;
+      width: 90%;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      margin: 30px auto;
+    }
+
+    .contact-form h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px 15px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    .contact-form textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .contact-form button {
+      width: 100%;
+      background-color: #2575fc;
+      color: white;
+      border: none;
+      padding: 14px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition:background0.3s ease-in;
+    }
+
+    .contact-form button:hover {
+      background-color: #3d5e93;
+    }
+
+    #responseMessage {
+      margin-top: 15px;
+      font-weight: 500;
+      color: green;
+      text-align: center;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      nav#navMenu ul {
+        flex-direction: column;
+        display: none;
+        background-color: #1a1a1a;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+      }
+
+      nav#navMenu ul.show {
+        display: flex;
+      }
+
+      nav#navMenu ul li a {
+        border-top: 1px solid #333;
+      }
+
+      .contact-form {
+        padding: 20px;
+        margin: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header with Logo and Toggle -->
+  <header>
+    <div class="logo">Capture Ventures</div>
+    <span class="menu-toggle" onclick="toggleMenu()">&#9776;</span>
+  </header>
+
+  <!-- Navigation Menu -->
+  <nav id="navMenu">
+    <ul id="menuList">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="register.html">Register</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="ceo.html">CEO's Page</a></li>
+    </ul>
+  </nav>
+
+  <!-- Contact Form -->
+  <section class="contact-form">
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Your Email" required />
+      <textarea id="message" placeholder="Your Message" required></textarea>
+      <button type="button" onclick="sendMessage()">Send Message</button>
+    </form>
+    <div id="responseMessage"></div>
+  </section>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menuList");
+      menu.classList.toggle("show");
+    }
+
+    function sendMessage() {
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+      const responseDiv = document.getElementById("responseMessage");
+
+      if (name && email && message) {
+        responseDiv.textContent = "Thank you, your message has been sent!";
+        responseDiv.style.color = "green";
+        document.getElementById("contactForm").reset();
+      } else {
+        responseDiv.textContent = "Please fill out all fields.";
+        responseDiv.style.color = "red";
+      }
+    }
+  </script>
+
+</body>
+</html>

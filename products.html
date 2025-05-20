@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Goods We Sell</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #f0f4f8, #dfe6e9);
+      color: #2d3436;
+      background-image: url("images/safety-tool2.jpg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+  
+    }
+
+    header {
+      background-color: #2d3436;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    .menu-icon {
+      font-size: 1.8rem;
+      cursor: pointer;
+      display: none;
+    }
+
+    nav {
+      background-color: #636e72;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      justify-content: center;
+    }
+
+    nav ul li a {
+      display: block;
+      padding: 1rem 1.5rem;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
+      background-color: #b2bec3;
+      color: #2d3436;
+    }
+
+    .goods {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+      background-color: #9e858500;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      border-radius: 10px;
+    }
+
+    .goods h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #d8edfd;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #8399ae;
+      overflow-x: auto;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #677078;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #5192a3;
+    }
+
+    footer {
+      background-color: #2d3436;
+      text-align: center;
+      padding: 1rem;
+      color: #dfe6e9;
+      margin-top: 2rem;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .menu-icon {
+        display: block;
+      }
+
+      nav {
+        display: none;
+        flex-direction: column;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      nav ul {
+        flex-direction: column;
+      }
+
+      nav ul li a {
+        border-top: 1px solid #b2bec3;
+      }
+
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+
+      th {
+        display: none;
+      }
+
+      td {
+        position: relative;
+        padding-left: 50%;
+        text-align: left;
+      }
+
+      td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 15px;
+        font-weight: bold;
+        color: #555;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h2>Our Shop</h2>
+    <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
+  </header>
+
+  <nav id="navMenu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="register.html">Register</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="ceo.html">CEO's Page</a></li>
+    </ul>
+  </nav>
+
+  <section class="goods">
+    <h2>Goods & Items We Sell</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Numbers</th>
+          <th>Item Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td data-label="#">1</td><td data-label="Item Name">Cements</td></tr>
+        <tr><td data-label="#">2</td><td data-label="Item Name">Shovels</td></tr>
+        <tr><td data-label="#">3</td><td data-label="Item Name">Trowel</td></tr>
+        <tr><td data-label="#">4</td><td data-label="Item Name">Pick and Axe</td></tr>
+        <tr><td data-label="#">5</td><td data-label="Item Name">Nails</td></tr>
+        <tr><td data-label="#">6</td><td data-label="Item Name">Hammers</td></tr>
+        <tr><td data-label="#">7</td><td data-label="Item Name">Soft Drinks</td></tr>
+        <tr><td data-label="#">8</td><td data-label="Item Name">Fan Belt</td></tr>
+        <tr><td data-label="#">9</td><td data-label="Item Name">Pins Engine Oil</td></tr>
+        <tr><td data-label="#">10</td><td data-label="Item Name">Shell Oil</td></tr>
+        <tr><td data-label="#">11</td><td data-label="Item Name">Cutlass</td></tr>
+        <tr><td data-label="#">12</td><td data-label="Item Name">Bearing Case</td></tr>
+        <tr><td data-label="#">13</td><td data-label="Item Name">Bearings</td></tr>
+        <tr><td data-label="#">14</td><td data-label="Item Name">Bolt</td></tr>
+        <tr><td data-label="#">15</td><td data-label="Item Name">Grease (Big and Small Size)</td></tr>
+        <tr><td data-label="#">16</td><td data-label="Item Name">Binding Wire</td></tr>
+        <tr><td data-label="#">17</td><td data-label="Item Name">Case "4" and "3"</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <footer>
+    &copy; 2025 Capture Ventures. All rights reserved.
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navMenu").classList.toggle("active");
+    }
+  </script>
+
+</body>
+</html>
