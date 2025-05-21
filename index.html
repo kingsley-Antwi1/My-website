@@ -4,6 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Capture Ventures</title>
+  <!-- Font Awesome CDN for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
     * {
       margin: 0;
@@ -13,11 +16,12 @@
     }
 
     body {
-      background: linear-gradient(to right, #f0f4f8, #d9e2ec);
+      background: linear-gradient(135deg, #1c3246 0%, #061930 100%);
+
       color: #333;
       font-size: 16px;
       padding-top: 70px;
-      background-image: url("images/safety-tool2.jpg");
+
       background-repeat: repeat-x;
       background-size: cover;
       animation: moveBackground 30s linear infinite;
@@ -63,8 +67,41 @@
       letter-spacing: 2px;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     }
-    h2{
-        color: #004d4d;
+
+    h2 {
+      color: #004d4d;
+    }
+
+    /* Horizontal navigation for large screens */
+    .top-nav {
+      display: flex;
+      justify-content: center;
+      background: #004d4d;
+      border-radius: 0 0 10px 10px;
+      margin-top: 1rem;
+    }
+
+    .top-nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      padding: 0.5rem 1rem;
+      margin: 0;
+    }
+
+    .top-nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .top-nav ul li a:hover {
+      color: #aad8d3;
     }
 
     .menu-icon {
@@ -129,6 +166,10 @@
       color: white;
       text-decoration: none;
       font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
     }
 
     .container {
@@ -205,7 +246,53 @@
       transform: rotateY(180deg);
       transition: 2s;
     }
+    .awards-info{
+      color: white; 
+      background-image: url(images/awards2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin-top: 1rem;
+  padding-left: 1.5rem;
+    }
+    .awards-info h2{
+      color: white;
+      font-weight: bolder;
+      font-size: 2rem;
 
+    }
+.awards-info ul {
+  margin-top: 1rem;
+  padding-left: 1.8rem;
+   
+ 
+}
+
+.awards-info ul li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+  
+}
+
+.workforce-info p {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: white;
+  
+
+}
+.workforce-info{
+background-image: url(images/Employee.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  
+}
+.workforce-info h2{
+  color: white;
+  font-size: rem;
+  font-weight: bold;
+}
     footer {
       text-align: center;
       background-color: #2c3e50;
@@ -213,9 +300,24 @@
       padding: 1rem;
     }
 
+    /* Responsive rules */
+    /* Large screens: hide hamburger and side-nav, show horizontal nav */
+    @media (min-width: 769px) {
+      .menu-icon {
+        display: none;
+      }
+      .side-nav {
+        display: none;
+      }
+      .top-nav {
+        display: flex;
+      }
+    }
+
+    /* Small screens: show hamburger and side-nav, hide horizontal nav */
     @media (max-width: 768px) {
-      header h1 {
-        font-size: 2rem;
+      .top-nav {
+        display: none;
       }
     }
   </style>
@@ -228,17 +330,45 @@
       <div class="bar"></div>
       <div class="bar"></div>
     </div>
+
     <h1>Capture Ventures</h1>
     <p>Your Trusted Partner in Small-Scale Mining and Building Materials</p>
+<!-- Social media icons -->
+  <div class="social-media" style="margin-top: 1rem;">
+ <a href="https://facebook.com/kingsley.antwi.480674" target="_blank" style="color: white; margin-right: 15px; font-size: 1.2rem;">
+        <i class="fab fa-facebook-f"></i>
+  <a href="https://twitter.com/captureventures" target="_blank" style="color: white; margin-right: 15px; font-size: 1.2rem;">
+    <i class="fab fa-twitter"></i>
+  </a>
+  <a href="https://instagram.com/obengantwikingsley" target="_blank" style="color: white; margin-right: 15px; font-size: 1.2rem;">
+    <i class="fab fa-instagram"></i>
+  </a>
+  <a href="https://linkedin.com/company/captureventures" target="_blank" style="color: white; margin-right: 15px; font-size: 1.2rem;">
+    <i class="fab fa-linkedin-in"></i>
+  </a>
+  <a href="https://wa.me/233245599539" target="_blank" style="color: white; font-size: 1.2rem;">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</div>
+    <!-- Horizontal nav for large screens -->
+    <nav class="top-nav">
+      <ul>
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="register.html"><i class="fas fa-user-plus"></i> Register</a></li>
+        <li><a href="products.html"><i class="fas fa-boxes"></i> Products</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+        <li><a href="ceo.html"><i class="fas fa-user-tie"></i> CEO's Page</a></li>
+      </ul>
+    </nav>
   </header>
 
   <nav id="navMenu" class="side-nav">
     <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="register.html">Register</a></li>
-      <li><a href="products.html">Products</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="ceo.html">CEO's Page</a></li>
+      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="register.html"><i class="fas fa-user-plus"></i> Register</a></li>
+      <li><a href="products.html"><i class="fas fa-boxes"></i> Products</a></li>
+      <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+      <li><a href="ceo.html"><i class="fas fa-user-tie"></i> CEO's Page</a></li>
     </ul>
   </nav>
 
@@ -314,21 +444,53 @@
       <p><strong>Contact:</strong> 0543625113</p>
       <p><strong>Email:</strong> <a href="mailto:CaptureVent@gmail.com">CaptureVent@gmail.com</a></p>
       <p><a href="ceo.html">Click here to learn more about our CEO</a></p>
+      
+    </section>
+      <section class="awards-info">
+      <h2>Our Achievements</h2>
+      <p>Capture Ventures has proudly received numerous awards for excellence in small-scale mining operations and building material supplies. Some of our notable recognitions include:</p>
+      <ul>
+        <li>🏆 Best Small-Scale Mining Supply Company – Ashanti Awards 2023</li>
+        <li>🏅 Excellence in Building Material Distribution – Ghana Business Expo 2024</li>
+        <li>🥇 Safety Equipment Supplier of the Year – SafetyTech Ghana 2022</li>
+      </ul>
+    </section>
+
+    <section class="workforce-info">
+      <h2>Our Team</h2>
+      <p>We are proud to employ a dedicated and hardworking team of <strong>185 workers</strong> who help drive our mission and serve our customers with excellence across all sectors.</p>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Capture Ventures. All Rights Reserved.</p>
+    <p>&copy; 2025 Capture Ventures. All rights reserved.</p>
+
+    <a href="https://facebook.com/kingsley.antwi.480674" target="_blank" style="color: white; margin-right: 15px; font-size: 1.2rem;">
+        <i class="fab fa-facebook-f"></i>
+  <a href="https://twitter.com/captureventures" target="_blank" style="color: white; margin-right: 15px; font-size: 1.2rem;">
+    <i class="fab fa-twitter"></i>
+  </a>
+  <a href="https://instagram.com/obengantwikingsley" target="_blank" style="color: white; margin-right: 15px; font-size: 1.2rem;">
+    <i class="fab fa-instagram"></i>
+  </a>
+  <a href="https://linkedin.com/company/captureventures" target="_blank" style="color: white; margin-right: 15px; font-size: 1.2rem;">
+    <i class="fab fa-linkedin-in"></i>
+  </a>
+  <a href="https://wa.me/233245599539" target="_blank" style="color: white; font-size: 1.2rem;">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</div>
+
   </footer>
 
   <script>
+    const menuIcon = document.getElementById('hamburger');
+    const sideNav = document.getElementById('navMenu');
+
     function toggleMenu() {
-      const navMenu = document.getElementById('navMenu');
-      const hamburger = document.getElementById('hamburger');
-      navMenu.classList.toggle('active');
-      hamburger.classList.toggle('active');
+      menuIcon.classList.toggle('active');
+      sideNav.classList.toggle('active');
     }
   </script>
-
 </body>
 </html>
