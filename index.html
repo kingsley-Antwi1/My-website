@@ -6,8 +6,17 @@
   <title>Capture Ventures</title>
   <!-- Font Awesome CDN for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+<!-- Google Fonts: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
   <style>
+        * {
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;}
+    
+    
     * {
       margin: 0;
       padding: 0;
@@ -15,15 +24,23 @@
       font-family: Arial, sans-serif;
     }
 
+     /* Overlay to darken background */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(30, 58, 138, 0.7);
+      z-index: -1;}
+
     body {
-      background: linear-gradient(135deg, #1c3246 0%, #061930 100%);
-
-      color: #333;
-      font-size: 16px;
-      padding-top: 70px;
-
-      background-repeat: repeat-x;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
       background-size: cover;
+      color: #222;
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
       animation: moveBackground 30s linear infinite;
       color: #333;
     }
@@ -52,7 +69,7 @@
       position: relative;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       background: linear-gradient(135deg, #004d4d, #000000);
-      color: white;
+      color: #f2dd88;
       padding: 2.5rem;
       text-align: center;
       border-radius: 15px;
@@ -66,10 +83,11 @@
       font-size: 2rem;
       letter-spacing: 2px;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      color: #ffdd57;
     }
 
     h2 {
-      color: #004d4d;
+      color: #ffdd57;
     }
 
     /* Horizontal navigation for large screens */
@@ -79,6 +97,7 @@
       background: #004d4d;
       border-radius: 0 0 10px 10px;
       margin-top: 1rem;
+      color: #ffdd57;
     }
 
     .top-nav ul {
@@ -87,10 +106,12 @@
       gap: 2rem;
       padding: 0.5rem 1rem;
       margin: 0;
+      
+      
     }
 
     .top-nav ul li a {
-      color: white;
+      color: #ffdd57;
       text-decoration: none;
       font-weight: 600;
       font-size: 1.1rem;
@@ -101,7 +122,7 @@
     }
 
     .top-nav ul li a:hover {
-      color: #aad8d3;
+      color:white;
     }
 
     .menu-icon {
@@ -112,6 +133,7 @@
       left: 20px;
       cursor: pointer;
       z-index: 2001;
+      color: #ffdd57;
     }
 
     .menu-icon .bar {
@@ -121,10 +143,12 @@
       margin: 5px 0;
       border-radius: 2px;
       transition: 0.4s;
+      color: #ffdd57;
     }
 
     .menu-icon.active .bar:nth-child(1) {
       transform: rotate(45deg) translate(6px, 6px);
+      
     }
 
     .menu-icon.active .bar:nth-child(2) {
@@ -163,7 +187,7 @@
     }
 
     .side-nav ul li a {
-      color: white;
+      color: #ffdd57;;
       text-decoration: none;
       font-size: 1.1rem;
       display: flex;
@@ -176,12 +200,14 @@
       max-width: 1100px;
       margin: 0 auto;
       padding: 1rem;
+      color: #0e0c01;
+      
     }
 
     section {
       margin-bottom: 2rem;
       padding: 1.5rem;
-      background-color: #fff;
+      background-color: #eff0f2;
       border-radius: 10px;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
     }
@@ -189,7 +215,7 @@
     section h2 {
       text-align: center;
       margin-bottom: 1rem;
-      color: #2a5298;
+      color: #0a3784;
     }
 
     .product-gallery {
@@ -297,13 +323,34 @@ background-image: url(images/award.jpg);
   margin-bottom: 0.5rem;
   line-height: 1.6;
 }
+
+.button-link {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #16150fe7;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 20px;
+    transition: background-color 1s ease;
+    text-align: center;
+     display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .button-link:hover {
+    background-color: #ffdd57;
+    
+  }
     footer {
       text-align: center;
       background-color: #2c3e50;
-      color: white;
+      color: #ffdd57;
       padding: 1rem;
     }
 
+  
     /* Responsive rules */
     /* Large screens: hide hamburger and side-nav, show horizontal nav */
     @media (min-width: 769px) {
@@ -339,18 +386,18 @@ background-image: url(images/award.jpg);
     <p>Your Trusted Partner in Small-Scale Mining and Building Materials</p>
 <!-- Social media icons -->
   <div class="social-media" style="margin-top: 1rem;">
- <a href="https://facebook.com/kingsley.antwi.480674" target="_blank" style="color: white; margin-right: 15px; font-size: 1.2rem;">
+ <a href="https://facebook.com/kingsley.antwi.480674" target="_blank" style="color: #ffdd57;; margin-right: 15px; font-size: 1.2rem;">
         <i class="fab fa-facebook-f"></i>
-  <a href="https://twitter.com/captureventures" target="_blank" style="color: white; margin-right: 15px; font-size: 1.2rem;">
+  <a href="https://twitter.com/captureventures" target="_blank" style="color: #ffdd57;; margin-right: 15px; font-size: 1.2rem;">
     <i class="fab fa-twitter"></i>
   </a>
-  <a href="https://instagram.com/obengantwikingsley" target="_blank" style="color: white; margin-right: 15px; font-size: 1.2rem;">
+  <a href="https://instagram.com/obengantwikingsley" target="_blank" style="color: #ffdd57;; margin-right: 15px; font-size: 1.2rem;">
     <i class="fab fa-instagram"></i>
   </a>
-  <a href="https://linkedin.com/company/captureventures" target="_blank" style="color: white; margin-right: 15px; font-size: 1.2rem;">
+  <a href="https://linkedin.com/company/captureventures" target="_blank" style="color: #ffdd57;; margin-right: 15px; font-size: 1.2rem;">
     <i class="fab fa-linkedin-in"></i>
   </a>
-  <a href="https://wa.me/233245599539" target="_blank" style="color: white; font-size: 1.2rem;">
+  <a href="https://wa.me/233245599539" target="_blank" style="color: #ffdd57;; font-size: 1.2rem;">
     <i class="fab fa-whatsapp"></i>
   </a>
 </div>
@@ -360,8 +407,9 @@ background-image: url(images/award.jpg);
         <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
         <li><a href="register.html"><i class="fas fa-user-plus"></i> Register</a></li>
         <li><a href="products.html"><i class="fas fa-boxes"></i> Products</a></li>
-        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+        <li><a href="contact.html"><i class="fas fa-phone-alt"></i> Contact</a></li>
         <li><a href="ceo.html"><i class="fas fa-user-tie"></i> CEO's Page</a></li>
+        <li><a href="new.html"><i class="fas fa-user-friends"></i>Consultation</a></li>
       </ul>
     </nav>
   </header>
@@ -371,8 +419,10 @@ background-image: url(images/award.jpg);
       <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
       <li><a href="register.html"><i class="fas fa-user-plus"></i> Register</a></li>
       <li><a href="products.html"><i class="fas fa-boxes"></i> Products</a></li>
-      <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+      <li><a href="contact.html"><i class="fas fa-phone-alt"></i> Contact</a></li>
       <li><a href="ceo.html"><i class="fas fa-user-tie"></i> CEO's Page</a></li>
+      <li><a href="new.html"><i class="fas fa-user-friends"></i> Consultation</a></li>
+
     </ul>
   </nav>
 
@@ -380,7 +430,9 @@ background-image: url(images/award.jpg);
     <section class="company-info">
       <h2>Welcome to Capture Ventures</h2>
       <p>At <strong>Capture Ventures</strong>, we specialize in delivering high-quality small-scale mining materials and durable building supplies to support your projects and businesses. We pride ourselves on reliability, affordability, and outstanding customer service.</p>
-      <p>Whether you're a contractor, a miner, or a homeowner, we have the right materials to meet your needs—from shovels, chisels, safety gear to cement, roofing sheets, and blocks.</p>
+      <p>Whether you're a contractor, a miner, or a homeowner, we have the right materials to meet your needs—from shovels, chisels, safety gear to cement, roofing sheets, and blocks.</p> <br>
+      <p>Also We have a consultation service that deal with Marketing Strategy, Web Design, IT Consulting </p><br>
+      <p> <a href="new.html">Click To Locate Our IT Consultation Services</a></p>
       <div class="product-gallery">
         <div class="flip-card">
           <div class="flip-card-inner">
@@ -445,8 +497,8 @@ background-image: url(images/award.jpg);
     <section class="ceo-info">
       <h2>Meet Our CEO</h2>
       <p><strong>Name:</strong> Mr. Kingsley Antwi Obeng</p>
-      <p><strong>Contact:</strong> 0543625113</p>
-      <p><strong>Email:</strong> <a href="mailto:CaptureVent@gmail.com">CaptureVent@gmail.com</a></p>
+      <p><strong>Contact:</strong> 0543625113/0245599539</p>
+      <p><strong>Email:</strong> <a href="mailto:CaptureVent@gmail.com">Capture505@gmail.com</a></p>
       <p><a href="ceo.html">Click here to learn more about our CEO</a></p>
       
     </section>
@@ -465,25 +517,34 @@ background-image: url(images/award.jpg);
       <p>We are proud to employ a dedicated and hardworking team of <strong>185 workers</strong> who help drive our mission and serve our customers with excellence across all sectors.
       In addition, the company fosters open communication and encourages teamwork, allowing employees to share ideas, ask questions, and collaborate to solve problems. Managers provide regular feedback and support, helping workers improve and grow in their roles. Flexible work schedules, fair policies, and a healthy work environment further contribute to employee satisfaction and productivity</p>
     </section>
+
+     <div class="overlay">
+    <section>
+      <h2>Welcome</h2>
+      <h2>Click below to explore our dedicated team of staff.</h2>
+      <a href="staff_img.html" class="button-link">Go To Staff Gallery</a>
+    </section>
+  </div>
+     
   </main>
 
   <footer>
     <p>&copy; 2025 Capture Ventures. All rights reserved.</p>
 
-    <a href="https://facebook.com/kingsley.antwi.480674" target="_blank" style="color: white; margin-right: 15px; font-size: 1.2rem;">
+   <div class="media"><a href="https://facebook.com/kingsley.antwi.480674" target="_blank" style="color: #ffdd57;; margin-right: 15px; font-size: 1.2rem;">
         <i class="fab fa-facebook-f"></i>
-  <a href="https://twitter.com/captureventures" target="_blank" style="color: white; margin-right: 15px; font-size: 1.2rem;">
+  <a href="https://twitter.com/captureventures" target="_blank" style="color: #ffdd57;; margin-right: 15px; font-size: 1.2rem;">
     <i class="fab fa-twitter"></i>
   </a>
-  <a href="https://instagram.com/obengantwikingsley" target="_blank" style="color: white; margin-right: 15px; font-size: 1.2rem;">
+  <a href="https://instagram.com/obengantwikingsley" target="_blank" style="color: #ffdd57;; margin-right: 15px; font-size: 1.2rem;">
     <i class="fab fa-instagram"></i>
   </a>
-  <a href="https://linkedin.com/company/captureventures" target="_blank" style="color: white; margin-right: 15px; font-size: 1.2rem;">
+  <a href="https://linkedin.com/company/captureventures" target="_blank" style="color: #ffdd57;; margin-right: 15px; font-size: 1.2rem;">
     <i class="fab fa-linkedin-in"></i>
   </a>
-  <a href="https://wa.me/233245599539" target="_blank" style="color: white; font-size: 1.2rem;">
+  <a href="https://wa.me/233245599539" target="_blank" style="color: #ffdd57;; font-size: 1.2rem;">
     <i class="fab fa-whatsapp"></i>
-  </a>
+  </a> 
 </div>
 
   </footer>
@@ -497,5 +558,6 @@ background-image: url(images/award.jpg);
       sideNav.classList.toggle('active');
     }
   </script>
+  
 </body>
 </html>

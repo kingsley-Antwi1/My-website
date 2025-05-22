@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Capture Business Solutions</title>
+  
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  
+  <!-- Google Fonts: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  
+  <style>
+    /* Reset and base */
+    * {
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: #222;
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+    /* Overlay to darken background */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(30, 58, 138, 0.7);
+      z-index: -1;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: rgba(14, 38, 99, 0.9);
+      color: white;
+      padding: 15px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+    .navbar h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      user-select: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-weight: 500;
+      font-size: 1rem;
+    }
+    .nav-links a {
+      color: #f0f4ff;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.3s ease;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 2px;
+    }
+    .nav-links a:hover,
+    .nav-links a:focus {
+      color: #ffdd57;
+      border-bottom-color: #ffdd57;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: white;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 140px 20px 120px;
+      text-align: center;
+      color: #ffdd57;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.7);
+      max-width: 900px;
+      margin: 0 auto 60px;
+    }
+    .hero h2 {
+      font-size: 3.6rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      line-height: 1.1;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .hero p {
+      font-size: 1.3rem;
+      font-weight: 400;
+      max-width: 520px;
+      margin: 0 auto;
+      color: #ffe;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+      line-height: 1.5;
+    }
+
+    /* Social Media Icons in Hero */
+    .hero .social-media {
+      margin-top: 2rem;
+    }
+    .hero .social-media a {
+      color: #ffdd57;
+      margin: 0 15px;
+      font-size: 1.8rem;
+      transition: color 0.3s ease;
+    }
+    .hero .social-media a:hover {
+      color: #fff;
+    }
+
+    /* Sections */
+    .section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: 0 auto 60px;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease-out;
+    }
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .section h2 {
+      color: #1e3a8a;
+      margin-bottom: 25px;
+      font-weight: 700;
+      font-size: 2.2rem;
+      letter-spacing: 0.05em;
+      border-bottom: 3px solid #ffdd57;
+      display: inline-block;
+      padding-bottom: 6px;
+    }
+
+    /* Services */
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 28px;
+    }
+    .service-box {
+      background: white;
+      padding: 25px 20px;
+      border-radius: 14px;
+      width: 300px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+    }
+    .service-box:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+    }
+    .service-box h3 {
+      margin-top: 0;
+      margin-bottom: 15px;
+      color: #1e3a8a;
+      font-weight: 700;
+      font-size: 1.4rem;
+    }
+    .service-box p {
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #444;
+    }
+
+    /* Testimonials */
+    .testimonials blockquote {
+      font-style: italic;
+      margin: 1.5rem auto;
+      max-width: 650px;
+      color: #555;
+      font-size: 1.15rem;
+      position: relative;
+      padding-left: 40px;
+      border-left: 5px solid #ffdd57;
+    }
+    .testimonials blockquote:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+
+    /* About Us link fix */
+    #about a {
+      font-weight: 600;
+      color: #1e3a8a;
+      text-decoration: underline;
+      font-size: 1.25rem;
+    }
+    #about a:hover {
+      color: #ffdd57;
+    }
+
+    /* Contact Form */
+    .contact-form {
+      max-width: 520px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px 15px;
+      margin: 10px 0 20px;
+      border: 2px solid #1e3a8a;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: 'Poppins', sans-serif;
+      transition: border-color 0.3s ease;
+      resize: vertical;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: #ffdd57;
+      background: #fffef6;
+    }
+    .contact-form button {
+      background: #1e3a8a;
+      color: white;
+      border: none;
+      padding: 14px 30px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      display: block;
+      margin: 0 auto;
+    }
+    .contact-form button:hover {
+      background: #ffdd57;
+      color: #1e3a8a;
+      font-weight: 700;
+    }
+
+    /* Footer */
+    .footer {
+      background: rgba(14, 38, 99, 0.9);
+      color: #ffdd57;
+      text-align: center;
+      padding: 25px 20px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      user-select: none;
+    }
+    .footer .social-media {
+      margin-top: 1rem;
+    }
+    .footer .social-media a {
+      color: #ffdd57;
+      margin: 0 12px;
+      font-size: 1.5rem;
+      transition: color 0.3s ease;
+    }
+    .footer .social-media a:hover {
+      color: #fff;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background: rgba(14, 38, 99, 0.95);
+        padding: 15px 0;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        border-radius: 0 0 12px 12px;
+        z-index: 1100;
+      }
+      .nav-links a {
+        padding: 14px 20px;
+        font-size: 1.2rem;
+        border-bottom: 1px solid #2c4ca6;
+      }
+      .menu-toggle {
+        display: block;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .hero h2 {
+        font-size: 2.8rem;
+      }
+      .service-box {
+        width: 90%;
+      }
+      .section {
+        margin-bottom: 40px;
+        padding: 40px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <h1>Capture Business</h1>
+    <div class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu" role="button" tabindex="0">
+      <i class="fas fa-bars" aria-hidden="true"></i>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html"><i class="fas fa-home" aria-hidden="true"></i> Home</a>
+      <a href="#services"><i class="fas fa-briefcase" aria-hidden="true"></i> Services</a>
+      <a href="#about"><i class="fas fa-users" aria-hidden="true"></i> About</a>
+      <a href="#contact"><i class="fas fa-envelope" aria-hidden="true"></i> Contact</a>
+    </div>
+  </nav>
+
+  <section class="hero" role="banner" aria-label="Welcome message">
+    <h2>Welcome to Capture Business Solutions</h2>
+    <p>Your trusted partner in technology, consulting, and business growth.</p>
+    <div class="social-media" aria-label="Social media links">
+      <a href="https://facebook.com/kingsley.antwi.480674" target="_blank" rel="noopener" aria-label="Facebook">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://twitter.com/captureventures" target="_blank" rel="noopener" aria-label="Twitter">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="https://instagram.com/obengantwikingsley" target="_blank" rel="noopener" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://wa.me/233245599539" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+    </div>
+  </section>
+
+  <section class="section" id="services" tabindex="-1">
+    <h2>Our Services</h2>
+    <div class="services" role="list">
+      <article class="service-box" role="listitem">
+        <h3>IT Consulting</h3>
+        <p>Helping your business grow with smart, scalable tech solutions.</p>
+      </article>
+      <article class="service-box" role="listitem">
+        <h3>Marketing Strategy</h3>
+        <p>Boost your brand with data-driven campaigns and online visibility.</p>
+      </article>
+      <article class="service-box" role="listitem">
+        <h3>Web Design</h3>
+        <p>Modern, responsive websites that represent your brand professionally.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="about" tabindex="-1">
+    <h2>About Us</h2>
+    <p>Capture Business Solutions has been delivering reliable services since 2015. Our mission is to empower businesses to achieve more with tailored digital solutions and expert guidance.</p>
+    <p><a href="IT.html" aria-label="Know more about IT">Know More About IT</a></p>
+  </section>
+
+  <section class="section testimonials" id="testimonials" tabindex="-1">
+    <h2>Testimonials</h2>
+    <blockquote>"We saw a 40% increase in sales within 3 months of working with Ake Business!" – CEO, MegaFoods</blockquote>
+    <blockquote>"Their consultants are top-notch and truly care about our business." – Director, EduSmart</blockquote>
+  </section>
+
+  <section class="section" id="contact" tabindex="-1">
+    <h2>Contact Us</h2>
+    <form class="contact-form" action="#" method="POST" aria-label="Contact form">
+      <input type="text" name="name" placeholder="Your Name" required aria-required="true" />
+      <input type="email" name="email" placeholder="Your Email" required aria-required="true" />
+      <textarea name="message" rows="5" placeholder="Your Message" required aria-required="true"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer class="footer" role="contentinfo">
+    <p>&copy; 2025 Capture Business Solutions. All rights reserved.</p>
+    <div class="social-media" aria-label="Social media links">
+      <a href="https://facebook.com/kingsley.antwi.480674" target="_blank" rel="noopener" aria-label="Facebook">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://twitter.com/captureventures" target="_blank" rel="noopener" aria-label="Twitter">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="https://instagram.com/obengantwikingsley" target="_blank" rel="noopener" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://linkedin.com/company/captureventures" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="https://wa.me/233245599539" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('navLinks');
+      nav.classList.toggle('active');
+    }
+
+    // Section scroll animations using IntersectionObserver
+    const sections = document.querySelectorAll('.section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target); // Animate once only
+        }
+      });
+    }, {
+      threshold: 0.15
+    });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+
+</body>
+</html>

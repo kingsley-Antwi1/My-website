@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Staff Gallery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('images/gallery-bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #333;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 10px 20px;
+    }
+
+    .navbar h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .menu-toggle {
+      font-size: 24px;
+      cursor: pointer;
+      display: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.85);
+        padding: 10px;
+        margin-top: 10px;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .gallery-item {
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+      padding-bottom: 15px;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .gallery-item img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-top: 20px;
+      border: 4px solid #0066cc;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .staff-name {
+      padding: 10px 0 5px;
+      font-weight: bold;
+      font-size: 18px;
+      color: #004080;
+    }
+
+    .position {
+      color: #444;
+      font-size: 15px;
+      margin-bottom: 10px;
+    }
+
+    .back-link {
+      text-align: center;
+      margin: 40px;
+    }
+
+    .back-link a {
+      color: #ffffff;
+      background-color: #004080;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .back-link a:hover {
+      background-color: #003060;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <h1>Staff Gallery</h1>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="staff_members.html">Staff Members</a>
+      <a href="contact.html">Contact</a>
+      <a href="register.html">Register</a>
+    </div>
+  </div>
+
+  <div class="gallery">
+    <a href="kingsley.html" class="gallery-item">
+      <img src="images/staff1.jpg" alt="Staff 1">
+      <div class="staff-name">Prof/Dr Kingsley Obeng Antwi</div>
+      <div class="position">CEO</div>
+    </a>
+
+    <a href="hamdiya.html" class="gallery-item">
+      <img src="images/staff2.jpg" alt="Staff 2">
+      <div class="staff-name">Mrs. Hamdiya Abdulah</div>
+      <div class="position">Accountant</div>
+    </a>
+
+    <a href="anokye.html" class="gallery-item">
+      <img src="images/staff3.jpg" alt="Staff 3">
+      <div class="staff-name">Mr. Anokye Dominic</div>
+      <div class="position">Secretary</div>
+    </a>
+
+    <a href="vivian.html" class="gallery-item">
+      <img src="images/staff4.jpg" alt="Staff 4">
+      <div class="staff-name">Ms. Vivian Antwi</div>
+      <div class="position">Deputy Accountant</div>
+    </a>
+
+    <a href="david.html" class="gallery-item">
+      <img src="images/staff5.jpg" alt="Staff 5">
+      <div class="staff-name">Prof. David Acquah</div>
+      <div class="position">Managing Director (IT)</div>
+    </a>
+
+    <a href="zibo.html" class="gallery-item">
+      <img src="images/staff6.jpg" alt="Staff 6">
+      <div class="staff-name">Dr. Zebo Iddiss</div>
+      <div class="position">General Manager</div>
+    </a>
+  </div>
+
+  <div class="back-link">
+    <a href="index.html">&larr; Back to Home</a>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("nav-links").classList.toggle("active");
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Information Technology</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Fo3rlrZj/kTcNuLhHUfF9CfhLb0E+aIh1fKXqK/JfTcN6h2JsmB1H1QaER3V2eP2Ex99pph6NmxE9nhkXlbX1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('https://images.unsplash.com/photo-1535223289827-42f1e9919769') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      margin: 0;
+    }
+
+    header {
+      background: rgba(0, 64, 128, 0.85);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background: rgba(0, 102, 204, 0.9);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 12px;
+    }
+
+    h1, h2, h3 {
+      color: #00ccff;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li::before {
+      content: "\f00c ";
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      color: #00ccff;
+      margin-right: 8px;
+    }
+
+    .job-roles li {
+      margin: 5px 0;
+    }
+
+    .highlight {
+      font-weight: bold;
+      color: #66d9ef;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-left: 5px solid #00ccff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      margin-bottom: 20px;
+      border-radius: 8px;
+    }
+
+    footer {
+      background: rgba(0, 64, 128, 0.9);
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 40px;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .contact-form button {
+      padding: 10px;
+      background-color: #00ccff;
+      border: none;
+      border-radius: 5px;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    #topBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 10px 15px;
+      font-size: 18px;
+      border: none;
+      background-color: #00ccff;
+      color: black;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      z-index: 1000;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Information Technology</h1>
+    <p>Understanding the World of IT</p>
+  </header>
+
+  <nav>
+    <a href="#about">What is IT?</a>
+    <a href="#key-areas">Key Areas</a>
+    <a href="#importance">Importance</a>
+    <a href="#careers">Careers</a>
+    <a href="#contact">Contact</a>
+    <a href="index.html">Go To Our Mian Site</a>
+    <a href="new.html">Back To Consultation Site</a>
+  </nav>
+
+  <main>
+    <section id="about">
+      <h2>What is Information Technology (IT)?</h2>
+      <p><span class="highlight">Information Technology (IT)</span> refers to the use of computers, storage, networking devices, software, and systems to manage and process data. It plays a crucial role in almost every aspect of modern life, from communication and business operations to healthcare, education, and entertainment.</p>
+    </section>
+
+    <section id="key-areas">
+      <h2>Key Areas of IT</h2>
+
+      <div class="card">
+        <h3>Hardware and Software</h3>
+        <ul>
+          <li>Hardware includes physical components like computers, servers, routers, and phones.</li>
+          <li>Software includes operating systems, applications, and tools that make hardware useful.</li>
+
+        </ul>
+        <p>Hardware and software are two essential components of any computing system. Hardware refers to the physical parts of a computer or electronic device — the components you can see and touch. This includes devices like the keyboard, mouse, monitor, printer, hard drive, and internal parts like the CPU (Central Processing Unit), motherboard, RAM (Random Access Memory), and graphics card. Hardware is responsible for performing tasks such as input, processing, output, and storage.
+
+On the other hand, software is the collection of programs, instructions, and data that tell the hardware what to do. Unlike hardware, software is intangible, meaning it cannot be touched or physically seen. It exists in the form of code or digital instructions. There are different types of software. System software, like Windows, macOS, or Linux, manages the hardware and provides a platform for running other applications. Application software includes programs that perform specific tasks for users, such as Microsoft Word for typing, Excel for calculations, or web browsers like Chrome and Firefox. Additionally, programming software is used by developers to create new software using programming languages.
+
+</p>
+      </div>
+
+      <div class="card">
+        <h3>Networking</h3>
+        <p>IT professionals design and maintain networks to connect computers and devices, enabling communication and resource sharing.</p>
+        <p>Networking in Information Technology refers to the process of connecting computers and other devices together so they can communicate and share information. This communication can happen within a small area, such as an office or home (called a Local Area Network, or LAN), or across large distances like between cities or even countries (known as a Wide Area Network, or WAN).
+
+The main purpose of networking is to enable devices to share resources such as files, printers, internet connections, and software applications. For example, in a company, employees can access a shared printer or server from their individual computers because they are all connected through a network. Networks can be wired, using physical cables like Ethernet, or wireless, using technologies such as Wi-Fi and Bluetooth.
+
+There are several key components that make networking possible. These include routers, which direct traffic between networks; switches, which connect devices within the same network; and modems, which connect a local network to the internet. IP addresses are used to identify each device on the network, allowing data to be sent and received accurately.</p>
+      </div>
+
+      <div class="card">
+        <h3>Data Management</h3>
+        <p>IT involves collecting, storing, and analyzing data for decision-making, security, and efficiency.</p><br>
+        <p>Data management is the process of collecting, storing, organizing, and using data efficiently, securely, and effectively. In today’s digital age, businesses, organizations, and individuals generate and rely on huge volumes of data—from customer information and financial records to social media posts and health records. Proper data management ensures that this data is accurate, accessible, and protected from loss or unauthorized access.
+
+The first step in data management is data collection, which involves gathering information from various sources such as online forms, surveys, transactions, or sensors. Once collected, this data must be stored securely in databases or cloud storage systems where it can be retrieved when needed. Technologies like relational databases (e.g., MySQL, Oracle, or SQL Server) help in storing and structuring data so that it can be accessed quickly and easily.</p>
+
+      </div>
+
+      <div class="card">
+        <h3>Cybersecurity</h3>
+        <p>Protecting data and systems from cyber threats, such as viruses, hacking, and unauthorized access, is a vital part of IT.</p>
+        <p>Cybersecurity refers to the practice of protecting computers, servers, networks, and data from digital attacks, unauthorized access, and damage. As individuals, businesses, and governments increasingly rely on technology and the internet, cybersecurity has become essential to safeguarding sensitive information and ensuring the smooth functioning of digital systems.
+
+Cyber threats can take many forms, including viruses, malware, ransomware, phishing attacks, and hacking. These threats can cause significant harm, such as stealing personal data, disrupting business operations, damaging reputations, or even bringing down entire systems. To prevent such risks, cybersecurity involves the use of various tools, strategies, and best practices.</p>
+      </div>
+
+      <div class="card">
+        <h3>Support and Services</h3>
+        <p>IT support teams help users troubleshoot issues and ensure systems are running smoothly.</p>
+        <p>Support and services in Information Technology refer to the ongoing assistance and maintenance provided to ensure that computer systems, software, and networks function smoothly and efficiently. IT support teams play a crucial role in helping users resolve technical problems, answering questions, and ensuring that hardware and software operate correctly.
+
+When users face issues such as software crashes, slow performance, connectivity problems, or difficulties using applications, IT support professionals step in to diagnose and fix these problems. They may provide help through various channels, including phone, email, remote access, or in-person visits. Support services also include routine maintenance tasks like installing updates, performing backups, and monitoring systems to prevent potential failures</p>
+      </div>
+
+      <div class="card">
+        <h3>Cloud Computing</h3>
+        <p>Many businesses now rely on cloud platforms like AWS, Google Cloud, or Microsoft Azure to store data and run applications over the internet.</p>
+    <p>Cloud computing is the delivery of computing services—including storage, processing power, databases, networking, software, and analytics—over the internet, often referred to as “the cloud.” Instead of owning and maintaining physical servers or data centers, individuals and businesses can rent computing resources from cloud service providers like Amazon Web Services (AWS), Google Cloud Platform, or Microsoft Azure.
+
+Cloud computing offers flexibility and scalability, allowing users to access and manage resources on demand without needing to invest heavily in infrastructure. This means businesses can easily scale up their IT capabilities during peak times and scale down when they no longer need as much capacity, paying only for what they use.</p>
+      </div>
+
+      <div class="card">
+        <h3>Software Development</h3>
+        <p>IT also involves designing and building applications or systems for various business or personal needs.</p>
+        <p>Developers work closely with users or businesses to understand requirements and create software that improves productivity, automates tasks, or provides new functionalities. The development process often follows structured methodologies, such as Agile or Waterfall, to ensure the software is delivered efficiently and meets quality standards.
+
+Software development can range from creating simple apps for everyday use to complex systems that manage critical operations in industries like finance, healthcare, or transportation. It also includes maintaining and updating software to fix bugs, add features, and improve security.
+
+Ultimately, software development drives innovation by enabling technology solutions that transform how individuals and organizations operate and interact.
+
+</p>
+      </div>
+    </section>
+
+    <section id="importance">
+      <h2>Importance of IT in Today’s World</h2>
+      <ul>
+        <li><span class="highlight">Business Efficiency</span>: IT streamlines operations, automates tasks, and improves productivity.</li>
+        <li><span class="highlight">Communication</span>: Email, messaging apps, and video conferencing have transformed communication.</li>
+        <li><span class="highlight">Innovation</span>: IT drives advancements like artificial intelligence and virtual reality.</li>
+        <li><span class="highlight">Education</span>: Online platforms and digital tools make education more accessible.</li>
+        <li><span class="highlight">Healthcare</span>: IT helps manage patient records, imaging, and telemedicine.</li>
+      </ul>
+    </section>
+
+    <section id="careers">
+      <h2>Careers in IT</h2>
+      <ul class="job-roles">
+        <li>Software Developer</li>
+        <li>Network Administrator</li>
+        <li>Systems Analyst</li>
+        <li>IT Support Specialist</li>
+        <li>Data Analyst</li>
+        <li>Cybersecurity Analyst</li>
+        <li>Database Administrator</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+        <h2>If You Want To Choose A Business Career..... </h2>
+      <h2>Contact Us</h2>
+      <form class="contact-form" action="https://formspree.io/f/myzwawal" method="post">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea rows="4" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <button id="topBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+
+  <footer>
+    <p>&copy; 2025 Capturer Ventures IT Consult Overview. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const topBtn = document.getElementById('topBtn');
+
+    window.onscroll = function () {
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        topBtn.style.display = 'block';
+      } else {
+        topBtn.style.display = 'none';
+      }
+    };
+
+    topBtn.onclick = function () {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    };
+  </script>
+
+</body>
+</html>
