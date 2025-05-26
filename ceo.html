@@ -12,6 +12,13 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
+     /* Overlay to darken background */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(30, 58, 138, 0.7);
+      z-index: -1;}
     body {
       background-color: #e0f7fa;
       background-image: url('images/img3.jpg'); /* Optional background */
@@ -50,10 +57,11 @@
       border-radius: 15px;
       padding: 30px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    
     }
 
     header {
-      background: linear-gradient(135deg, #004d4d, #000000);
+      background-color: #13184d;      
       color: white;
       padding: 2.5rem;
       text-align: center;
@@ -95,11 +103,11 @@
 
     .btn-container {
       text-align: center;
-      margin-top: 2rem;
+      margin-top: 3rem;
     }
 
     .btn-container a {
-      background-color: #299e4c;
+      background-color: #142057;
       color: white;
       padding: 12px 24px;
       margin: 10px;
@@ -107,11 +115,11 @@
       border-radius: 8px;
       font-weight: bold;
       transition: background-color 0.3s ease;
-      animation: fadeInDown 2s ease-in;
+      animation: fadeInDown 3s ease-in;
     }
 
     .btn-container a:hover {
-      background-color: #02100e;
+      background-color: #1e2909;
     
     }
 
@@ -121,9 +129,16 @@
       color: white;
       padding: 1rem;
       border-radius: 10px;
-      margin-top: 5rem;
+      margin-top: 7rem;
      animation: fadeInDown 4s ease-in-out;
     }
+     footer a{
+      color: #effffd;
+     }
+     footer a:hover {
+
+      color: #a19405;}
+
 
     @keyframes fadeInDown {
       from {
@@ -185,6 +200,7 @@
   </script>
   <footer>
     <p>&copy; 2025 Capture Ventures. All Rights Reserved.</p>
+    <h3> <a href="policy.html" >Privacy & Policy</a></h3>
     
   </footer>
 
